@@ -11,10 +11,17 @@ We start off by importing the required libraries
 >import pandas as pd<br />
 >from selenium.common.exceptions import NoSuchElementException<br />
 >from datetime import date<br />
-After this now is time to initialize the variables for the pandas dataframe and the Selenium WebDriver. We will be scraping multiple pages with the same format: Amazon product pages. The columns in the dataframe will reflect the data we are grabbing. 
 
->driver = webdriver.Firefox(executable_path=r'PATH')
+After this now is time to create the variables for the pandas dataframe and the Selenium WebDriver. We will be scraping multiple pages with the same format: Amazon product pages. The columns in the dataframe will reflect the data we are grabbing. 
+
 The path is where your geckdriver.exe file is located. 
 
->df = pd.DataFrame(columns=['Name', 'Price', 'Description', 'Link']
+>driver = webdriver.Firefox(executable_path=r'PATH')
+
+
+>df = pd.DataFrame(columns=['Name', 'Price', 'Description', 'Link', 'DateScraped']
+
+I also 
+
+I also create a variable for the current date. This is used for identifying new 
 
