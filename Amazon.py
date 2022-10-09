@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-#import the required libraries
+#import the required libraries, I commented out the ones I usually use but not in this specific program
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -14,12 +14,11 @@ from selenium.common.exceptions import TimeoutException
 #from selenium.common.exceptions import WebDriverException
 #from selenium.common.exceptions import ElementNotInteractableException
 #from selenium.webdriver.common.action_chains import ActionChains
-#import pandas as pd
 from datetime import date
 import time
 
 #The driver is the variable we will use to control the webdriver windows. The path should be where your geckodriver.exe file is(if you are using the firefox driver)
-driver = webdriver.Firefox(executable_path=r'C:\Users\clayk\OneDrive\Desktop\legal\geckodriver.exe') 
+driver = webdriver.Firefox(executable_path=r'C:\Users\clayk\Desktop\geckodriver.exe') 
 #This line of code is creating the dataframe and the column names for the dataframe. This dataframe will eventually be exported as a .csv file.
 df = pd.DataFrame(columns=['Title', 'Price', 'Link', 'DateScraped'])
 #The index is set to 0 so we can iterate over the dataframe and add new rows
@@ -88,4 +87,5 @@ productList = ['Shoes', 'Socks', 'Footwear']
 for product in productList:
     Amazon(product)
     
-df.to_csv(r"C:\Users\clayk\OneDrive\Desktop\legal\nationalHomeInspector2022-10-5.csv", index=False)
+#You can now export the dataframe to a CSV to the location of your choice
+df.to_csv(r"C:\Users\clayk\Desktop\AmazonScrape.csv", index=False)
